@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useSyncStore } from "@/store/sync";
+import { useSyncStore, type Device } from "@/store/sync";
 import { cn } from "@/lib/utils";
 
 // Icons
@@ -173,7 +173,7 @@ function getOverallStatusConfig(status: "healthy" | "warning" | "error") {
   }
 }
 
-function DeviceCard({ device }: { device: ReturnType<typeof useSyncStore.getState>["getDevices"][number] }) {
+function DeviceCard({ device }: { device: Device }) {
   const config = getStatusConfig(device.status);
   
   return (
@@ -238,7 +238,7 @@ function DeviceCard({ device }: { device: ReturnType<typeof useSyncStore.getStat
         <div className="mt-4 p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
           <p className="text-xs text-blue-400 mb-2">Uncommitted changes:</p>
           <div className="space-y-1">
-            {device.pendingChanges.slice(0, 3).map((change, i) => (
+            {device.pendingChanges.slice(0, 3).map((change: string, i: number) => (
               <div key={i} className="text-xs font-mono text-white/60 bg-black/20 px-2 py-1 rounded">
                 {change}
               </div>
