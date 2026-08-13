@@ -13,18 +13,10 @@ function SyncIcon({ className }: { className?: string }) {
   );
 }
 
-function RefreshIcon({ className }: { className?: string }) {
+function CopyIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-    </svg>
-  );
-}
-
-function GitBranchIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184" />
     </svg>
   );
 }
@@ -53,7 +45,39 @@ function ClockIcon({ className }: { className?: string }) {
   );
 }
 
-function ServerIcon({ className }: { className?: string }) {
+function GitBranchIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+    </svg>
+  );
+}
+
+function TerminalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  );
+}
+
+function ActivityIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>
+  );
+}
+
+function CpuIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+    </svg>
+  );
+}
+
+function HardDriveIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
@@ -61,6 +85,51 @@ function ServerIcon({ className }: { className?: string }) {
   );
 }
 
+function NetworkIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+    </svg>
+  );
+}
+
+// Copy button component
+function CopyButton({ text, className }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className={cn(
+        "flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all",
+        copied
+          ? "bg-green-500/20 text-green-400 border border-green-500/30"
+          : "bg-white/10 hover:bg-white/20 text-white/70 border border-white/10 hover:text-white",
+        className
+      )}
+    >
+      {copied ? (
+        <>
+          <CheckIcon className="w-3.5 h-3.5" />
+          Copied!
+        </>
+      ) : (
+        <>
+          <CopyIcon className="w-3.5 h-3.5" />
+          Copy
+        </>
+      )}
+    </button>
+  );
+}
+
+// Format time ago
 function formatTimeAgo(dateString: string | null | undefined): string {
   if (!dateString) return "Never";
   
@@ -83,6 +152,7 @@ function formatDate(dateString: string | null | undefined): string {
   return new Date(dateString).toLocaleString();
 }
 
+// Get status config
 function getStatusConfig(status: string) {
   switch (status) {
     case "synced":
@@ -115,7 +185,7 @@ function getStatusConfig(status: string) {
         bg: "bg-gray-500/10",
         dot: "bg-gray-500",
         label: "Offline",
-        icon: <ServerIcon className="w-3 h-3" />,
+        icon: <ActivityIcon className="w-3 h-3" />,
       };
     case "not-set-up":
       return {
@@ -151,7 +221,7 @@ function getOverallStatusConfig(status: "healthy" | "warning" | "error") {
         color: "text-green-400",
         bg: "bg-green-500/20",
         border: "border-green-500/30",
-        label: "All devices synced",
+        label: "All systems operational",
         icon: <CheckIcon className="w-5 h-5" />,
       };
     case "warning":
@@ -173,25 +243,33 @@ function getOverallStatusConfig(status: "healthy" | "warning" | "error") {
   }
 }
 
+// Device card component
 function DeviceCard({ device }: { device: Device }) {
   const config = getStatusConfig(device.status);
-  
+  const isActive = device.lastSync && 
+    (Date.now() - new Date(device.lastSync).getTime()) < 3600000; // Active within 1 hour
+
   return (
-    <div className="p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+    <div className="p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
       {/* Header */}
-      <div className="flex items-start justify-between mb-5">
+      <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center">
-            <span className="text-2xl">
+          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center">
+            <span className="text-xl">
               {device.id.includes("macbook") ? "💻" : device.id.includes("mac-mini") ? "🖥️" : "🖥️"}
             </span>
           </div>
           <div>
-            <h3 className="font-semibold text-base capitalize">{device.id.replace(/-/g, " ")}</h3>
-            <p className="text-xs text-white/50">{device.hostname}</p>
-            {device.location && (
-              <p className="text-xs text-white/30">{device.location}</p>
-            )}
+            <h3 className="font-semibold capitalize">{device.id.replace(/-/g, " ")}</h3>
+            <div className="flex items-center gap-2 text-xs text-white/50">
+              <span>{device.hostname}</span>
+              {device.location && (
+                <>
+                  <span>•</span>
+                  <span>{device.location}</span>
+                </>
+              )}
+            </div>
           </div>
         </div>
         <div className={cn("flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border", config.color, config.bg)}>
@@ -201,27 +279,51 @@ function DeviceCard({ device }: { device: Device }) {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-1">
-          <div className="flex items-center gap-1.5 text-xs text-white/50">
+      <div className="grid grid-cols-3 gap-3">
+        <div className="p-3 rounded-lg bg-white/5">
+          <div className="flex items-center gap-1.5 text-xs text-white/40 mb-1.5">
             <ClockIcon className="w-3.5 h-3.5" />
             Last Sync
           </div>
-          <p className="text-sm font-mono">{formatTimeAgo(device.lastSync)}</p>
-          <p className="text-xs text-white/30">{formatDate(device.lastSync)}</p>
+          <p className="text-sm font-medium">{formatTimeAgo(device.lastSync)}</p>
         </div>
-        <div className="space-y-1">
-          <div className="flex items-center gap-1.5 text-xs text-white/50">
+        <div className="p-3 rounded-lg bg-white/5">
+          <div className="flex items-center gap-1.5 text-xs text-white/40 mb-1.5">
             <GitBranchIcon className="w-3.5 h-3.5" />
             Commit
           </div>
           <p className="text-sm font-mono text-purple-400">
             {device.lastCommit?.slice(0, 7) || "None"}
           </p>
-          <p className="text-xs text-white/30">
-            {device.behindRemote > 0 ? `${device.behindRemote} behind` : "Up to date"}
+        </div>
+        <div className="p-3 rounded-lg bg-white/5">
+          <div className="flex items-center gap-1.5 text-xs text-white/40 mb-1.5">
+            <ActivityIcon className="w-3.5 h-3.5" />
+            Status
+          </div>
+          <p className={cn("text-sm font-medium", isActive ? "text-green-400" : "text-white/60")}>
+            {isActive ? "Active" : "Idle"}
           </p>
         </div>
+      </div>
+
+      {/* Additional Info */}
+      <div className="mt-3 flex flex-wrap gap-2">
+        {device.os && (
+          <span className="px-2 py-1 rounded text-xs bg-white/5 text-white/50">
+            {device.os}
+          </span>
+        )}
+        {device.behindRemote > 0 && (
+          <span className="px-2 py-1 rounded text-xs bg-yellow-500/10 text-yellow-400">
+            {device.behindRemote} behind
+          </span>
+        )}
+        {device.pendingChanges.length > 0 && (
+          <span className="px-2 py-1 rounded text-xs bg-blue-500/10 text-blue-400">
+            {device.pendingChanges.length} pending
+          </span>
+        )}
       </div>
 
       {/* Alerts */}
@@ -233,22 +335,40 @@ function DeviceCard({ device }: { device: Device }) {
           </div>
         </div>
       )}
+    </div>
+  );
+}
 
-      {device.pendingChanges.length > 0 && (
-        <div className="mt-4 p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
-          <p className="text-xs text-blue-400 mb-2">Uncommitted changes:</p>
-          <div className="space-y-1">
-            {device.pendingChanges.slice(0, 3).map((change: string, i: number) => (
-              <div key={i} className="text-xs font-mono text-white/60 bg-black/20 px-2 py-1 rounded">
-                {change}
-              </div>
-            ))}
-            {device.pendingChanges.length > 3 && (
-              <p className="text-xs text-white/40">+{device.pendingChanges.length - 3} more</p>
-            )}
-          </div>
+// Setup step component
+function SetupStep({ step, command, description }: { step: number; command: string; description?: string }) {
+  return (
+    <div className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
+      <div className="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-sm font-bold text-purple-400 flex-shrink-0">
+        {step}
+      </div>
+      <div className="flex-1 min-w-0">
+        {description && <p className="text-sm text-white/60 mb-2">{description}</p>}
+        <div className="flex items-center gap-2">
+          <code className="flex-1 text-sm bg-black/30 px-3 py-2 rounded-lg font-mono text-white/80 overflow-x-auto">
+            {command}
+          </code>
+          <CopyButton text={command} />
         </div>
-      )}
+      </div>
+    </div>
+  );
+}
+
+// System info card
+function SystemInfoCard({ title, value, icon, subtext }: { title: string; value: string; icon: React.ReactNode; subtext?: string }) {
+  return (
+    <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+      <div className="flex items-center gap-2 text-white/40 mb-2">
+        {icon}
+        <span className="text-xs uppercase tracking-wider">{title}</span>
+      </div>
+      <p className="text-xl font-bold">{value}</p>
+      {subtext && <p className="text-xs text-white/40 mt-1">{subtext}</p>}
     </div>
   );
 }
@@ -268,6 +388,7 @@ export default function SyncPage() {
   } = useSyncStore();
 
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [showSetup, setShowSetup] = useState(false);
 
   const loadData = useCallback(async () => {
     await fetchManifest();
@@ -288,20 +409,43 @@ export default function SyncPage() {
   const overallStatus = getOverallStatus();
   const overallConfig = getOverallStatusConfig(overallStatus);
 
-  const syncedCount = devices.filter(d => d.status === "synced").length;
-  const totalCount = devices.length;
+  const syncedCount = devices.filter(d => d.status === "synced").length
+  const totalCount = devices.length
+  const activeCount = devices.filter(d => d.lastSync && (Date.now() - new Date(d.lastSync).getTime()) < 3600000).length
+  const behindCount = devices.filter(d => d.behindRemote > 0).length
+
+  // Setup commands
+  const setupCommands = {
+    clone: 'git clone https://github.com/ekcheungAI/ekos.git ~/Desktop/ekOS',
+    bootstrap: '~/Desktop/ekOS/00_meta/dotfiles/bootstrap-mac.sh',
+    update: '~/Desktop/ekOS/00_meta/dotfiles/sync-status.sh --update',
+    push: '~/Desktop/ekOS/00_meta/dotfiles/sync-status.sh --push',
+    fullSync: '~/Desktop/ekOS/00_meta/dotfiles/sync-status.sh --sync',
+  };
 
   return (
     <div className="space-y-8">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Sync Status</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Sync Monitor</h1>
           <p className="text-white/50 mt-1">
-            ekOS dotfiles sync across all devices
+            ekOS dotfiles sync status across all devices
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setShowSetup(!showSetup)}
+            className={cn(
+              "flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors text-sm",
+              showSetup 
+                ? "bg-purple-500/20 border-purple-500/30 text-purple-400" 
+                : "bg-white/10 border-white/20 text-white/60 hover:text-white"
+            )}
+          >
+            <TerminalIcon className="w-4 h-4" />
+            {showSetup ? "Hide Setup" : "Setup Guide"}
+          </button>
           <button
             onClick={() => setAutoRefresh(!autoRefresh)}
             className={cn(
@@ -312,18 +456,62 @@ export default function SyncPage() {
             )}
           >
             <span className={cn("w-2 h-2 rounded-full", autoRefresh ? "bg-green-500 animate-pulse" : "bg-gray-500")} />
-            {autoRefresh ? "Auto-refresh On" : "Auto-refresh Off"}
+            {autoRefresh ? "Live" : "Paused"}
           </button>
           <button
             onClick={refreshAll}
             disabled={isRefreshing}
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-colors disabled:opacity-50"
           >
-            <RefreshIcon className={cn("w-4 h-4", isRefreshing && "animate-spin")} />
+            <SyncIcon className={cn("w-4 h-4", isRefreshing && "animate-spin")} />
             {isRefreshing ? "Refreshing..." : "Refresh"}
           </button>
         </div>
       </div>
+
+      {/* Setup Guide */}
+      {showSetup && (
+        <div className="p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
+          <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <TerminalIcon className="w-5 h-5 text-purple-400" />
+            One-Click Setup for New Devices
+          </h2>
+          <p className="text-sm text-white/60 mb-6">
+            Run these commands on a new Mac to set up ekOS sync. Each command can be copied with one click.
+          </p>
+          <div className="space-y-4">
+            <SetupStep 
+              step={1} 
+              description="First, clone the ekOS repository to your machine"
+              command={setupCommands.clone}
+            />
+            <SetupStep 
+              step={2} 
+              description="Run the bootstrap script to install dependencies and sync dotfiles"
+              command={setupCommands.bootstrap}
+            />
+            <SetupStep 
+              step={3} 
+              description="After making changes, update your sync status"
+              command={setupCommands.update}
+            />
+            <SetupStep 
+              step={4} 
+              description="Push your status to GitHub to update the dashboard"
+              command={setupCommands.push}
+            />
+          </div>
+          <div className="mt-6 p-4 rounded-lg bg-white/5 border border-white/10">
+            <p className="text-sm text-white/60 mb-3">Or run a full sync in one command:</p>
+            <div className="flex items-center gap-2">
+              <code className="flex-1 text-sm bg-black/30 px-3 py-2 rounded-lg font-mono text-white/80">
+                {setupCommands.fullSync}
+              </code>
+              <CopyButton text={setupCommands.fullSync} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Error State */}
       {error && (
@@ -342,6 +530,34 @@ export default function SyncPage() {
         </div>
       )}
 
+      {/* Stats Overview */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <SystemInfoCard
+          title="Total Devices"
+          value={totalCount.toString()}
+          icon={<HardDriveIcon className="w-4 h-4" />}
+          subtext={`${syncedCount} synced`}
+        />
+        <SystemInfoCard
+          title="Active Now"
+          value={activeCount.toString()}
+          icon={<ActivityIcon className="w-4 h-4" />}
+          subtext="Last hour"
+        />
+        <SystemInfoCard
+          title="Behind Remote"
+          value={behindCount.toString()}
+          icon={<GitBranchIcon className="w-4 h-4" />}
+          subtext="Need sync"
+        />
+        <SystemInfoCard
+          title="Last Check"
+          value={lastFetched ? formatTimeAgo(lastFetched.toISOString()) : "—"}
+          icon={<ClockIcon className="w-4 h-4" />}
+          subtext={lastFetched ? formatDate(lastFetched.toISOString()) : ""}
+        />
+      </div>
+
       {/* Overall Status Banner */}
       <div className={cn("p-5 rounded-xl border flex items-center gap-4", overallConfig.bg, overallConfig.border)}>
         <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center", overallConfig.color)}>
@@ -352,10 +568,8 @@ export default function SyncPage() {
             {overallConfig.label}
           </h2>
           <p className="text-sm text-white/60">
-            {syncedCount} of {totalCount} device{totalCount !== 1 ? "s" : ""} synced
-            {lastFetched && (
-              <span className="text-white/40"> • Last checked {formatTimeAgo(lastFetched.toISOString())}</span>
-            )}
+            {activeCount} of {totalCount} device{totalCount !== 1 ? "s" : ""} active
+            {behindCount > 0 && ` • ${behindCount} behind`}
           </p>
         </div>
         <div className="ml-auto">
@@ -370,6 +584,9 @@ export default function SyncPage() {
                 />
               );
             })}
+            {devices.length === 0 && (
+              <span className="text-xs text-white/40">No devices</span>
+            )}
           </div>
         </div>
       </div>
@@ -389,9 +606,6 @@ export default function SyncPage() {
             </a>
             <p className="text-xs text-white/50">
               Branch: <span className="text-purple-400">{manifest.repo.branch}</span>
-              {manifest.repo.latestCommit && (
-                <> • Latest: <span className="text-white/70">{manifest.repo.latestCommit.slice(0, 7)}</span></>
-              )}
             </p>
           </div>
           <div className="text-right flex-shrink-0">
@@ -410,12 +624,12 @@ export default function SyncPage() {
         
         {devices.length === 0 ? (
           <div className="p-12 rounded-xl border border-dashed border-white/20 text-center">
-            <ServerIcon className="w-12 h-12 text-white/30 mx-auto mb-4" />
+            <HardDriveIcon className="w-12 h-12 text-white/30 mx-auto mb-4" />
             <p className="text-white/60">No devices configured yet</p>
-            <p className="text-sm text-white/40 mt-1">Add a device using the bootstrap script</p>
+            <p className="text-sm text-white/40 mt-1">Click "Setup Guide" above to add your first device</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {devices.map((device) => (
               <DeviceCard key={device.id} device={device} />
             ))}
@@ -423,49 +637,25 @@ export default function SyncPage() {
         )}
       </div>
 
-      {/* Add Device Section */}
-      <div className="p-6 rounded-xl border border-dashed border-white/20 bg-white/5">
-        <div className="flex items-center gap-6">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0">
-            <span className="text-3xl">+</span>
-          </div>
-          <div className="flex-1">
-            <h3 className="font-semibold">Add New Device</h3>
-            <p className="text-sm text-white/50 mt-0.5">
-              Run the bootstrap script on a new machine to sync dotfiles
-            </p>
-          </div>
-        </div>
-        <div className="mt-4 flex items-center gap-4">
-          <code className="flex-1 text-xs bg-black/30 px-4 py-3 rounded-lg font-mono text-white/70">
-            ~/Desktop/ekOS/00_meta/dotfiles/bootstrap-mac.sh
-          </code>
-          <a
-            href="https://github.com/ekcheungAI/ekos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-sm flex-shrink-0"
-          >
-            View on GitHub
-          </a>
-        </div>
-      </div>
-
       {/* Quick Actions */}
-      <div className="flex gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <button
           onClick={refreshAll}
           disabled={isRefreshing}
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 transition-all disabled:opacity-50 font-medium"
+          className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 transition-all disabled:opacity-50 font-medium"
         >
           <SyncIcon className={cn("w-5 h-5", isRefreshing && "animate-spin")} />
-          Sync All Devices
+          Sync All
         </button>
+        <CopyButton 
+          text={setupCommands.fullSync} 
+          className="w-full justify-center py-4 text-sm" 
+        />
         <a
           href="https://github.com/ekcheungAI/ekos"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 transition-all font-medium"
+          className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 transition-all font-medium"
         >
           <GitBranchIcon className="w-5 h-5" />
           GitHub

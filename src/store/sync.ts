@@ -10,6 +10,15 @@ export interface Device {
   status: "synced" | "behind" | "syncing" | "offline" | "not-set-up" | "error";
   os?: string;
   location?: string;
+  // Enhanced monitoring
+  uptime?: number;
+  lastActivity?: string;
+  cpuUsage?: number;
+  memoryUsage?: number;
+  diskUsage?: number;
+  networkStatus?: "online" | "offline";
+  lastError?: string;
+  installedAt?: string;
 }
 
 export interface RepoInfo {
@@ -18,6 +27,8 @@ export interface RepoInfo {
   rawUrl?: string;
   latestCommit?: string;
   latestCommitTime?: string;
+  commitCount?: number;
+  contributors?: number;
 }
 
 interface SyncManifest {
@@ -29,6 +40,12 @@ interface SyncManifest {
     autoUpdate: boolean;
     intervalSeconds: number;
     lastCheck?: string;
+  };
+  stats?: {
+    totalDevices: number;
+    syncedDevices: number;
+    activeDevices: number;
+    lastGlobalSync?: string;
   };
 }
 
@@ -48,7 +65,16 @@ interface SyncStore {
   getDevices: () => Device[];
   getDeviceByHostname: (hostname: string) => Device | undefined;
   getOverallStatus: () => "healthy" | "warning" | "error";
-  getCommitHistory: () => { hash: string; time: string; message: string }[];
+  getActiveDevices: () => Device[];
+  getSyncedDevices: () => Device[];
+  getDevicesBehind: () => Device[];
+  getStats: () => {
+    total: number;
+    active: number;
+    synced: number;
+    behind: number;
+    offline: number;
+  };
 }
 
 export const useSyncStore = create<SyncStore>((set, get) => ({
@@ -83,7 +109,6 @@ export const useSyncStore = create<SyncStore>((set, get) => ({
       const githubManifest = await res.json();
       set({ githubManifest, lastGithubFetch: new Date() });
     } catch (err) {
-      // GitHub fetch failed - not critical, just log
       console.warn("GitHub manifest fetch failed:", err);
     }
   },
@@ -101,13 +126,11 @@ export const useSyncStore = create<SyncStore>((set, get) => ({
     const { manifest, githubManifest } = get();
     if (!manifest) return [];
     
-    // Use local manifest as source of truth
     const devices = Object.entries(manifest.devices || {}).map(([id, device]) => ({
       id,
       ...device,
     }));
 
-    // Merge with GitHub data if available (shows other devices)
     if (githubManifest) {
       const localIds = new Set(devices.map(d => d.id));
       const remoteDevices = Object.entries(githubManifest.devices || {})
@@ -127,17 +150,50 @@ export const useSyncStore = create<SyncStore>((set, get) => ({
     const devices = get().getDevices();
     if (devices.length === 0) return "error";
     
-    const hasError = devices.some(d => d.status === "offline" || d.status === "error" || d.status === "not-set-up");
-    const hasWarning = devices.some(d => d.status === "behind" || d.behindRemote > 0);
+    const hasError = devices.some(d => 
+      d.status === "offline" || 
+      d.status === "error" || 
+      d.status === "not-set-up"
+    );
+    const hasWarning = devices.some(d => 
+      d.status === "behind" || 
+      d.behindRemote > 0 ||
+      d.pendingChanges.length > 0
+    );
     
     if (hasError) return "error";
     if (hasWarning) return "warning";
     return "healthy";
   },
 
-  getCommitHistory: () => {
-    // In production, this would fetch from GitHub API
-    // For now, return empty - the actual history comes from sync-status.sh
-    return [];
+  getActiveDevices: () => {
+    return get().getDevices().filter((d) => {
+      if (!d.lastSync) return false;
+      const oneHourAgo = Date.now() - 3600000;
+      return new Date(d.lastSync).getTime() > oneHourAgo;
+    });
+  },
+
+  getSyncedDevices: () => {
+    return get().getDevices().filter((d) => d.status === "synced");
+  },
+
+  getDevicesBehind: () => {
+    return get().getDevices().filter((d) => d.behindRemote > 0);
+  },
+
+  getStats: () => {
+    const devices = get().getDevices();
+    return {
+      total: devices.length,
+      active: devices.filter((d) => {
+        if (!d.lastSync) return false;
+        const oneHourAgo = Date.now() - 3600000;
+        return new Date(d.lastSync).getTime() > oneHourAgo;
+      }).length,
+      synced: devices.filter((d) => d.status === "synced").length,
+      behind: devices.filter((d) => d.behindRemote > 0).length,
+      offline: devices.filter((d) => d.status === "offline" || d.status === "not-set-up").length,
+    };
   },
 }));
