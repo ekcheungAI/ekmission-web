@@ -25,7 +25,6 @@ export async function GET() {
       let path = "";
       let branch = "";
       let isBare = false;
-      let isCurrent = false;
 
       for (const line of lines) {
         if (line.startsWith("worktree ")) {
@@ -34,8 +33,6 @@ export async function GET() {
           branch = line.replace("branch ", "");
         } else if (line === "bare") {
           isBare = true;
-        } else if (line === "bare") {
-          isCurrent = true;
         }
       }
 

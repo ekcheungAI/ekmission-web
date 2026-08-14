@@ -13,14 +13,6 @@ interface ScreenSession {
   attached: boolean;
 }
 
-interface AgentStatus {
-  name: string;
-  screenSession: string;
-  status: "running" | "idle" | "error";
-  lastOutput: string;
-  uptime: string;
-}
-
 export default function MonitorPage() {
   const [screenSessions, setScreenSessions] = useState<ScreenSession[]>([]);
   const [selectedSession, setSelectedSession] = useState<string | null>(null);

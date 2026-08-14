@@ -204,7 +204,7 @@ export default function SSHTerminal({ machine, className, onClose }: SSHTerminal
         fetch(`/api/ssh/${sessionId}/close`, { method: "DELETE" }).catch(() => {});
       }
     };
-  }, [machine.id, machine.name, machine.tailscaleIP, machine.ssh.user, writePrompt]);
+  }, [machine.id, machine.name, machine.tailscaleIP, machine.ssh.user, writePrompt, sessionId]);
 
   // Handle terminal input
   useEffect(() => {

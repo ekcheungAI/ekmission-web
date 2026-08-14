@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ekmission
+
+Command center for managing AI agents, git workflows, and multi-device sync across your ekOS environment.
+
+## Features
+
+- **Agent Management** — Spawn and manage AI agents with skill routing
+- **Git Dashboard** — Visual git status, branch management, and commit history
+- **Sync Monitor** — Track ekOS dotfiles sync status across all your machines
+- **Machine Registry** — SSH terminal access to registered machines via Tailscale
+- **MCP Integration** — Built-in support for Vercel and Cloudflare MCP servers
+- **Task Queue** — Track and manage async agent tasks
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript (strict)
+- **Styling**: Tailwind CSS v4
+- **State**: Zustand + TanStack Query
+- **Terminal**: xterm.js
+- **SSH**: node-ssh / ssh2
+- **MCP**: @modelcontextprotocol/sdk
+- **Validation**: Zod 4
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              App Router pages
+│   ├── actions/      Server actions
+│   ├── agents/       Agent management UI
+│   ├── api/          API routes
+│   ├── git/          Git operations
+│   ├── login/        Auth
+│   ├── machines/     Machine registry
+│   ├── monitor/      System monitoring
+│   ├── projects/     Project list
+│   ├── sync/         ekOS sync dashboard
+│   └── tasks/        Task queue
+├── components/       Shared UI components
+│   ├── auth/         Auth provider
+│   └── terminal/     SSH terminal
+├── lib/
+│   ├── agents/       Agent spawning logic
+│   └── ssh/          SSH session management
+├── store/            Zustand stores
+├── types/            Shared TypeScript types
+└── proxy.ts          MCP proxy
+```
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+AUTH_PASSWORD=        # Password for dashboard access
+TAILSCALE_AUTH_KEY=  # Tailscale auth key for machine discovery
+```

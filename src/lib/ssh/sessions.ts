@@ -37,8 +37,8 @@ export async function executeSSHSession(
 
   try {
     const result = await ssh.execCommand(command, {
-      onStdout: (chunk: Buffer) => {},
-      onStderr: (chunk: Buffer) => {},
+      onStdout: () => {},
+      onStderr: () => {},
     });
 
     return {

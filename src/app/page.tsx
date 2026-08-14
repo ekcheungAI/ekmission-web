@@ -11,7 +11,6 @@ export default function DashboardPage() {
 
   const activeAgents = agents.filter((a) => a.status === "active").length;
   const onlineMachines = machines.filter((m) => m.status !== "offline").length;
-  const activeProjects = projects.filter((p) => p.status === "active").length;
 
   return (
     <div className="space-y-8">

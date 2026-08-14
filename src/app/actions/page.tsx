@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useMachineStore } from "@/store/machines";
-import type { Machine } from "@/types";
 
 interface Action {
   id: string;
@@ -40,10 +39,12 @@ export default function ActionsPage() {
     setSessionLogs((prev) => [...prev, `[${timestamp}] ${message}`]);
   }, []);
 
+  const idCounter = useRef(0);
+
   const executeCommand = async (cmd: string, target: string) => {
-    const actionId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    
-    const newAction: Action = {
+    const actionId = `action-${crypto.randomUUID()}-${++idCounter.current}`;
+
+    setActions((prev) => [{
       id: actionId,
       command: cmd,
       target,
@@ -51,9 +52,7 @@ export default function ActionsPage() {
       output: "",
       startedAt: new Date(),
       machine: target,
-    };
-
-    setActions((prev) => [newAction, ...prev]);
+    }, ...prev]);
     setIsExecuting(true);
 
     try {

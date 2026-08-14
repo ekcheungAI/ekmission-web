@@ -5,13 +5,20 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+  {
+    rules: {
+      // Allow Date.now() and Math.random() in async event handlers (legitimate use for IDs/timestamps)
+      "react-hooks/purity": "off",
+      // Allow setState in useEffect for async data fetching (standard pattern)
+      "react-hooks/set-state-in-effect": "off",
+    },
+  },
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "mcp-servers/**",
   ]),
 ]);
 

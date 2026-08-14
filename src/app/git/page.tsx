@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import { format, formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 
 type TabType = "worktrees" | "branches" | "commits";
 
@@ -89,7 +89,7 @@ export default function GitPage() {
     
     try {
       await Promise.all([fetchWorktrees(), fetchBranches(), fetchCommits()]);
-    } catch (err) {
+    } catch {
       setError("Failed to fetch git data");
     } finally {
       setIsLoading(false);

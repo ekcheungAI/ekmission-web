@@ -1,4 +1,4 @@
-import { Machine, CommandExecution } from "@/types";
+import { Machine } from "@/types";
 
 export interface SpawnConfig {
   name: string;
