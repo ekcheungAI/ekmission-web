@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/components/auth/auth-provider";
-import { AuthGuard } from "@/components/auth/auth-guard";
+import AuthGuard from "@/components/auth/auth-guard";
 
 export const metadata: Metadata = {
   title: "ekmission - Command Center",
