@@ -1,9 +1,15 @@
 "use client";
 
 import { useAuth } from "@/components/auth/auth-provider";
+import { usePathname } from "next/navigation";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   const { isAuthenticated, isLoading } = useAuth();
+
+  if (pathname === "/login") {
+    return <>{children}</>;
+  }
 
   if (isLoading) {
     return (
