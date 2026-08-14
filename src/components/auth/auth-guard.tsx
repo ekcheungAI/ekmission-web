@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/components/auth/auth-provider";
 import { usePathname } from "next/navigation";
+import Sidebar from "@/components/layout/Sidebar";
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -34,5 +35,12 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     return null; // Middleware will redirect
   }
 
-  return <>{children}</>;
+  return (
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <main className="flex-1 ml-64">
+        {children}
+      </main>
+    </div>
+  );
 }
